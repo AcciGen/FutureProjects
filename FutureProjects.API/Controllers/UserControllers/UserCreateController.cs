@@ -9,7 +9,7 @@ namespace FutureProjects.API.Controllers.UserControllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class UserCreateController : ControllerBase
     {
         private readonly IUserService _userService;

@@ -10,7 +10,7 @@ namespace FutureProjects.API.Controllers.UserControllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class UserUpdateController : ControllerBase
     {
         private readonly IUserService _userService;
