@@ -89,10 +89,11 @@ namespace FutureProjects.Application.Services.AuthServices
 
             var result = await _userService.GetByAny(x => x.Login == user.Login);
 
-            if (user.Login == result.Login && user.Password == result.Password)
-            {
+            if (result == null)
+                return false;
+
+            else if (user.Login == result.Login && user.Password == result.Password)
                 return true;
-            }
 
             return false;
         }
