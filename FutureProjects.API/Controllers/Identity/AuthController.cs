@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FutureProjects.API.Controllers.Identity
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/User/[action]")]
     [ApiController]
     public class AuthController : ControllerBase
     {

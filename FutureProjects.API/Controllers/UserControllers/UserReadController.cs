@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FutureProjects.API.Controllers.UserControllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/User/[action]")]
     [ApiController]
     //[Authorize]
     public class UserReadController : ControllerBase
@@ -20,7 +20,7 @@ namespace FutureProjects.API.Controllers.UserControllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserViewModel>>> GetAllUsers()
+        public async Task<ActionResult<IEnumerable<UserViewModel>>> GetAll()
         {
             var result = await _userService.GetAll();
 

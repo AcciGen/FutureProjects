@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FutureProjects.API.Controllers.UserControllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/User/[action]")]
     [ApiController]
     //[Authorize]
     public class UserCreateController : ControllerBase
@@ -20,11 +20,11 @@ namespace FutureProjects.API.Controllers.UserControllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<User>> CreateUser(UserDTO model)
+        public async Task<User> Create(UserDTO model)
         {
             var result = await _userService.Create(model);
 
-            return Ok(result);
+            return result;
         }
     }
 }
