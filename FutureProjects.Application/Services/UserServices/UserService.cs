@@ -52,7 +52,7 @@ namespace FutureProjects.Application.Services.UserServices
             return result;
         }
 
-        /// ############### read ##############
+        // ############### read ##############
         #region
         public async Task<IEnumerable<UserViewModel>> GetAll()
         {
@@ -60,6 +60,7 @@ namespace FutureProjects.Application.Services.UserServices
 
             var result = users.Select(model => new UserViewModel
             {
+                Id = model.Id,
                 Name = model.Name,
                 Email = model.Email,
                 Role = model.Role,
@@ -92,6 +93,7 @@ namespace FutureProjects.Application.Services.UserServices
 
             var user = new UserViewModel
             {
+                Id = result.Id,
                 Name = result.Name,
                 Email = result.Email,
                 Role = result.Role,
@@ -109,6 +111,7 @@ namespace FutureProjects.Application.Services.UserServices
 
             var user = new User
             {
+                Id = result.Id,
                 Name = result.Name,
                 Email = result.Email,
                 Login = result.Login,
@@ -128,6 +131,7 @@ namespace FutureProjects.Application.Services.UserServices
 
             var user = new UserViewModel
             {
+                Id = result.Id,
                 Name = result.Name,
                 Email = result.Email,
                 Role = result.Role,
@@ -144,6 +148,7 @@ namespace FutureProjects.Application.Services.UserServices
             }
             var users = result.Select(model => new UserViewModel
             {
+                Id = model.Id,
                 Name = model.Name,
                 Email = model.Email,
                 Role = model.Role,
@@ -160,6 +165,7 @@ namespace FutureProjects.Application.Services.UserServices
             }
             var users = result.Select(model => new UserViewModel
             {
+                Id = model.Id,
                 Name = model.Name,
                 Email = model.Email,
                 Role = model.Role,
@@ -170,7 +176,6 @@ namespace FutureProjects.Application.Services.UserServices
 
 
         ////////// ########     updates      ############
-        ///
         public async Task<string> Update(int Id, UserDTO userDTO)
         {
             var result = await _userRepository.GetByAny(x => x.Id == Id);
