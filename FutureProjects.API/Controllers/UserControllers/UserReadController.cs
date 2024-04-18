@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FutureProjects.API.Controllers.UserControllers
 {
-    [Route("api/User/[action]")]
+    [Route("api/User")]
     [ApiController]
     //[Authorize]
     public class UserReadController : ControllerBase
@@ -27,7 +27,7 @@ namespace FutureProjects.API.Controllers.UserControllers
             return Ok(result);
         }
 
-        [HttpPatch("GetByName")]
+        [HttpGet("GetByName")]
         public async Task<ActionResult<IEnumerable<UserViewModel>>> GetByName(string name)
         {
             var result = await _userService.GetByName(name);
@@ -35,7 +35,7 @@ namespace FutureProjects.API.Controllers.UserControllers
             return Ok(result);
         }
 
-        [HttpPatch("GetById")]
+        [HttpGet("GetById")]
         public async Task<ActionResult<UserViewModel>> GetById(int id)
         {
             var result = await _userService.GetById(id);
@@ -43,7 +43,7 @@ namespace FutureProjects.API.Controllers.UserControllers
             return Ok(result);
         }
 
-        [HttpPatch("GetByRole")]
+        [HttpGet("GetByRole")]
         public async Task<ActionResult<IEnumerable<UserViewModel>>> GetByRole(string role)
         {
             var result = await _userService.GetByRole(role);
@@ -51,7 +51,7 @@ namespace FutureProjects.API.Controllers.UserControllers
             return Ok(result);
         }
 
-        [HttpPatch("GetByLogin")]
+        [HttpGet("GetByLogin")]
         public async Task<ActionResult<UserViewModel>> GetByLogin(string login)
         {
             var result = await _userService.GetByLogin(login);
@@ -59,7 +59,7 @@ namespace FutureProjects.API.Controllers.UserControllers
             return Ok(result);
         }
 
-        [HttpPatch("GetByEmail")]
+        [HttpGet("GetByEmail")]
         public async Task<ActionResult<UserViewModel>> GetByEmail(string email)
         {
             var result = await _userService.GetByEmail(email);

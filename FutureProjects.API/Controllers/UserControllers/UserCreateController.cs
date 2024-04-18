@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FutureProjects.API.Controllers.UserControllers
 {
-    [Route("api/User/[action]")]
+    [Route("api/User")]
     [ApiController]
     //[Authorize]
     public class UserCreateController : ControllerBase

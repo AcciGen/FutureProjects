@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FutureProjects.API.Controllers.UserControllers
 {
-    [Route("api/User/[action]")]
+    [Route("api/User")]
     [ApiController]
     //[Authorize]
     public class UserDeleteController : ControllerBase
@@ -17,7 +17,7 @@ namespace FutureProjects.API.Controllers.UserControllers
             _userService = userService;
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<bool> DeleteById(int id)
         {
             var result = await _userService.DeleteById(id);

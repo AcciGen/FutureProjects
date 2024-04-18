@@ -10,7 +10,7 @@ namespace FutureProjects.Application.Abstractions.IServices
         public Task<User> Create(UserDTO userDTO);
 
         public Task<IEnumerable<UserViewModel>> GetByName(string name);
-        public Task<UserViewModel> GetById(int Id);
+        public Task<User> GetById(int Id);
         public Task<UserViewModel> GetByEmail(string email);
         public Task<UserViewModel> GetByLogin(string login);
         public Task<IEnumerable<UserViewModel>> GetByRole(string role);

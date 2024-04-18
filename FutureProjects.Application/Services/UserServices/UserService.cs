@@ -99,7 +99,7 @@ namespace FutureProjects.Application.Services.UserServices
             return user;
         }
 
-        public async Task<UserViewModel> GetById(int Id)
+        public async Task<User> GetById(int Id)
         {
             var result = await _userRepository.GetByAny(x => x.Id == Id);
             if (result == null)
@@ -107,10 +107,12 @@ namespace FutureProjects.Application.Services.UserServices
                 return null;
             }
 
-            var user = new UserViewModel
+            var user = new User
             {
                 Name = result.Name,
                 Email = result.Email,
+                Login = result.Login,
+                Password = result.Password,
                 Role = result.Role,
             };
             return user;

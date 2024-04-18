@@ -8,7 +8,7 @@ using System.Runtime.InteropServices.Marshalling;
 
 namespace FutureProjects.API.Controllers.UserControllers
 {
-    [Route("api/User/[action]")]
+    [Route("api/User")]
     [ApiController]
     //[Authorize]
     public class UserUpdateController : ControllerBase
@@ -20,7 +20,7 @@ namespace FutureProjects.API.Controllers.UserControllers
             _userService = userService;
         }
 
-        [HttpPatch("Update")]
+        [HttpPut("{id}")]
         public async Task<ActionResult<string>> Update(int id, UserDTO model)
         {
             var result = await _userService.Update(id, model);
