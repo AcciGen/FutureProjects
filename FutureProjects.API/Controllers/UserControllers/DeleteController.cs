@@ -7,12 +7,12 @@ namespace FutureProjects.API.Controllers.UserControllers
 {
     [Route("api/User")]
     [ApiController]
-    //[Authorize]
-    public class UserDeleteController : ControllerBase
+    [Authorize]
+    public class DeleteController : ControllerBase
     {
         private readonly IUserService _userService;
 
-        public UserDeleteController(IUserService userService)
+        public DeleteController(IUserService userService)
         {
             _userService = userService;
         }

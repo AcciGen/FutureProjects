@@ -9,12 +9,12 @@ namespace FutureProjects.API.Controllers.UserControllers
 {
     [Route("api/User")]
     [ApiController]
-    //[Authorize]
-    public class UserReadController : ControllerBase
+    [Authorize]
+    public class ReadController : ControllerBase
     {
         private readonly IUserService _userService;
 
-        public UserReadController(IUserService userService)
+        public ReadController(IUserService userService)
         {
             _userService = userService;
         }
